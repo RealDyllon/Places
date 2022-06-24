@@ -13,7 +13,7 @@ struct PlacesApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainMap()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

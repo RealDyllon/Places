@@ -16,6 +16,8 @@
 		5308962728659CA1008A73E8 /* PlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5308962628659CA1008A73E8 /* PlacesTests.swift */; };
 		5308963128659CA1008A73E8 /* PlacesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5308963028659CA1008A73E8 /* PlacesUITests.swift */; };
 		5308963328659CA1008A73E8 /* PlacesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5308963228659CA1008A73E8 /* PlacesUITestsLaunchTests.swift */; };
+		530896402865AB89008A73E8 /* MainMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5308963F2865AB89008A73E8 /* MainMap.swift */; };
+		5308964F2865B77D008A73E8 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 5308964E2865B77D008A73E8 /* BottomSheet */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,7 @@
 		5308962C28659CA1008A73E8 /* PlacesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlacesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5308963028659CA1008A73E8 /* PlacesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesUITests.swift; sourceTree = "<group>"; };
 		5308963228659CA1008A73E8 /* PlacesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5308963F2865AB89008A73E8 /* MainMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5308964F2865B77D008A73E8 /* BottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +102,9 @@
 		5308960F28659C9C008A73E8 /* Places */ = {
 			isa = PBXGroup;
 			children = (
+				530896442865B07E008A73E8 /* Common */,
 				5308961028659C9C008A73E8 /* PlacesApp.swift */,
+				5308963F2865AB89008A73E8 /* MainMap.swift */,
 				5308961228659C9C008A73E8 /* ContentView.swift */,
 				5308961428659CA1008A73E8 /* Assets.xcassets */,
 				5308961928659CA1008A73E8 /* Persistence.swift */,
@@ -133,6 +139,13 @@
 			path = PlacesUITests;
 			sourceTree = "<group>";
 		};
+		530896442865B07E008A73E8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +162,9 @@
 			dependencies = (
 			);
 			name = Places;
+			packageProductDependencies = (
+				5308964E2865B77D008A73E8 /* BottomSheet */,
+			);
 			productName = Places;
 			productReference = 5308960D28659C9C008A73E8 /* Places.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +237,9 @@
 				Base,
 			);
 			mainGroup = 5308960428659C9C008A73E8;
+			packageReferences = (
+				5308964D2865B77D008A73E8 /* XCRemoteSwiftPackageReference "BottomSheet" */,
+			);
 			productRefGroup = 5308960E28659C9C008A73E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -263,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				530896402865AB89008A73E8 /* MainMap.swift in Sources */,
 				5308961A28659CA1008A73E8 /* Persistence.swift in Sources */,
 				5308961328659C9C008A73E8 /* ContentView.swift in Sources */,
 				5308961128659C9C008A73E8 /* PlacesApp.swift in Sources */,
@@ -353,7 +373,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -407,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -425,11 +445,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Places/Preview Content\"";
+				DEVELOPMENT_TEAM = TF835S78NT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -453,11 +475,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Places/Preview Content\"";
+				DEVELOPMENT_TEAM = TF835S78NT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -585,6 +609,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5308964D2865B77D008A73E8 /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lucaszischka/BottomSheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5308964E2865B77D008A73E8 /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5308964D2865B77D008A73E8 /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			productName = BottomSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5308961B28659CA1008A73E8 /* Places.xcdatamodeld */ = {
